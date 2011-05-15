@@ -442,9 +442,9 @@ $(document).ready(function() {
   $("#entry").keypress(function (e) {
     if (e.keyCode != 13 || e.shiftKey /* Return */) return;
     
-    var msg = $("#entry").attr("value");
+    var msg = $("#entry").val();
     if (!util.isBlank(msg)) send(msg);
-    $("#entry").attr("value", ""); // clear the entry field.
+    $("#entry").val(''); // clear the entry field.
   });
 
   $("#usersLink").click(outputUsers);
@@ -453,7 +453,7 @@ $(document).ready(function() {
   $("#connectButton").click(function () {
     //lock the UI while waiting for a response
     showLoad();
-    var nick = $("#nickInput").attr("value");
+    var nick = $("#nickInput").val();
 
     //dont bother the backend if we fail easy validations
     if (nick.length > 50) {
