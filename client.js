@@ -232,12 +232,16 @@ function addMessage (from, text, time, _class) {
               + '</tr>'
               ;
   messageElement.html(content);
+  messageElement.syntaxHighlight();
 
   //the log is the stream that we view
   $("#log").append(messageElement);
 
   //always view the most recent message when it is added
   scrollDown();
+  
+  // apply syntax highlighting
+  $('pre').addClass('brush: ruby')
 }
 
 function updateRSS () {
@@ -500,6 +504,12 @@ $(document).ready(function() {
   longPoll();
 
   showConnect();
+  
+  // start syntax highlighting
+  $.SyntaxHighlighter.init({
+    theme: 'Google',
+    lineNumbers: false
+  });
 });
 
 //if we can, notify the server that we're going away.
