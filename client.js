@@ -7,6 +7,7 @@ var CONFIG = { debug: false
              };
 
 var nicks = [];
+var md = new Showdown.converter();
 
 //  CUT  ///////////////////////////////////////////////////////////////////
 /* This license and copyright apply to all code until the next "CUT"
@@ -222,7 +223,7 @@ function addMessage (from, text, time, _class) {
     messageElement.addClass("personal");
 
   // replace URLs with links
-  text = text.replace(util.urlRE, '<a target="_blank" href="$&">$&</a>');
+  text = md.makeHtml(text);
 
   var content = '<tr>'
               + '  <td class="date">' + util.timeString(time) + '</td>'
