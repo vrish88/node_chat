@@ -506,6 +506,8 @@ $(document).ready(function() {
 
   showConnect();
   
+  // auto-resize the input box
+  $('#entry').autoResize();
   // start syntax highlighting
   $.SyntaxHighlighter.init({
     theme: 'Google',
