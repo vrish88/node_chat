@@ -124,7 +124,7 @@ fu.listen(Number(process.env.PORT || PORT), HOST);
 
 fu.get("/", fu.staticHandler("index.html"));
 fu.get("/style.css", fu.staticHandler("style.css"));
-fu.get("/javascripts/client.js", fu.staticHandler("javascripts/client.js"));
+fu.get("/client.js", fu.staticHandler("client.js"));
 fu.get("/javascripts/markdown.js", fu.staticHandler("javascripts/markdown.js"));
 fu.get("/javascripts/autoresize.js", fu.staticHandler("javascripts/autoresize.js"));
 

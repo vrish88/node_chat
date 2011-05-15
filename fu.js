@@ -2,7 +2,7 @@ var createServer = require("http").createServer;
 var readFile = require("fs").readFile;
 var sys = require("sys");
 var url = require("url");
-DEBUG = false;
+DEBUG = true;
 
 var fu = exports;
 
