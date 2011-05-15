@@ -124,10 +124,9 @@ fu.listen(Number(process.env.PORT || PORT), HOST);
 
 fu.get("/", fu.staticHandler("index.html"));
 fu.get("/style.css", fu.staticHandler("style.css"));
-fu.get("/client.js", fu.staticHandler("client.js"));
-fu.get("/markdown.js", fu.staticHandler("markdown.js"));
-fu.get("/autoresize.js", fu.staticHandler("autoresize.js"));
-fu.get("/jquery-1.2.6.min.js", fu.staticHandler("jquery-1.2.6.min.js"));
+fu.get("/javascripts/client.js", fu.staticHandler("javascripts/client.js"));
+fu.get("/javascripts/markdown.js", fu.staticHandler("javascripts/markdown.js"));
+fu.get("/javascripts/autoresize.js", fu.staticHandler("javascripts/autoresize.js"));
 
 
 fu.get("/who", function (req, res) {
