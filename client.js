@@ -440,8 +440,9 @@ $(document).ready(function() {
 
   //submit new messages when the user hits enter if the message isnt blank
   $("#entry").keypress(function (e) {
-    if (e.keyCode != 13 /* Return */) return;
-    var msg = $("#entry").attr("value").replace("\n", "");
+    if (e.keyCode != 13 || e.shiftKey /* Return */) return;
+    
+    var msg = $("#entry").attr("value");
     if (!util.isBlank(msg)) send(msg);
     $("#entry").attr("value", ""); // clear the entry field.
   });
